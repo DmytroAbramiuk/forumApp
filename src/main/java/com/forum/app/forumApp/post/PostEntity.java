@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -29,14 +30,14 @@ public class PostEntity {
     private UserEntity user;
 
     @Column
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
 
     @Column
-    private LocalDate updatedDate;
+    private LocalDateTime updatedDate;
 
     @PrePersist
     protected void onCreate(){
-        this.createdDate = LocalDate.now();
-        this.updatedDate = LocalDate.now();
+        this.createdDate = LocalDateTime.now();
+        this.updatedDate = LocalDateTime.now();
     }
 }
